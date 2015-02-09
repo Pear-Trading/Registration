@@ -168,7 +168,7 @@ require './config/utils.php';
 						
 						if(received_data.response == true){
 							//alert(received_data.message);
-                            window.location = "<?=BASE_URL?>;
+                            window.location = "<?=BASE_URL?>";
 						}
 					}
 				  });

@@ -1,7 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
+error_reporting(0);
+ini_set('display_errors', '0');
 //debug statements
 //consumer
 //card_id=12345678&account=consumer&account_name=Mark+Lochrie&username=marklochrie&password1=mypass1&password2=mypass1&email=marklochrie50265%40gmail.com&gender=M&postcode=LA1+4DG&ethical_pref=environmental_impact&goods_services=&statement=&service=false&manufacturer=false&retailer=false&fixed=false&normadic=false&dob=19-08-1986 
