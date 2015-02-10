@@ -330,13 +330,13 @@ System coordinator</p>
 	
             <!-- Multiple Radios (inline) -->
             <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="gender">Gender: <br /><a class="hover_span">why?
-                    <div class="hover_content"><p>We need to capture your gender, for research purposes ONLY</p></div></a></label>
+              <label class="control-label col-lg-2" for="gender">Gender: <br /></label>
          	  <div class="col-lg-10 controls">
                <label  for="gender">
                 <select id="gender" name="gender" class="form-control">
-                  <option value="M">Male</option>
                   <option value="F">Female</option>
+                  <option value="M">Male</option>
+                  <option value="T">Transgender</option>
                   <option value="0">Rather not say</option>
                 </select>
                 </label>
