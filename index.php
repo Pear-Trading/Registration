@@ -394,11 +394,13 @@ System coordinator</p>
                   <div class="col-lg-10 controls">
                 <label  for="employment_status">Employment Status
                      <select id="employment_status" name="employment_status" class="form-control">
-                        <option value="unknown">Rather not say</option>
-                        <option value="employed">Employed</option>
                         <option value="self_employed">Self Employed</option>
+                        <option value="employed">Employed</option>
                         <option value="student">Student</option>
-                        <option value="unemployed">Unemployed</option>
+                        <option value="unpaid carer">Unpaid Carer</option>
+                        <option value="looking for work">Looking for work</option>
+                        <option value="other">Other</option>
+                        <option value="unknown">Rather not say</option>
                     </select>
                   </label>
                  </div>
