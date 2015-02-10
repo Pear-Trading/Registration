@@ -410,18 +410,7 @@ System coordinator</p>
          <label class="control-label col-lg-2" for="barter_card"> </label>
                   <div class="col-lg-10 controls">
                 <label  for="barter_card">Where did you pick up your Pear Card?
-                     <select id="barter_card" name="barter_card" class="form-control">
-                     <option value="other">Other</option>
-                     <?php $data = get_bartercard_businesses();
-
-							print_r($data);
-							foreach ($data as $item) 
-							{
-								echo "<option value='".$item[0]."'>".$item[0]."</option>";
-							}
-							
-							?>
-                    </select>
+                     <input placeholder='Business name' type='text' id="barter_card" name="barter_card" class="form-control">
                   </label>
                  </div>
                  </div>
