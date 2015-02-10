@@ -21,10 +21,13 @@ if (isset($_REQUEST['card_id']))
 	//$username = mysql_escape_string($_POST['username']);
 	//$password1 = mysql_escape_string($_POST['password1']);
 	$password1 = "";
-	$dob = mysql_escape_string($_REQUEST['dob']);
+	#$dob = mysql_escape_string($_REQUEST['dob']);
 	
-	$phpdate = strtotime( $dob );
-	$dob = date( 'Y-m-d', $phpdate );
+	#$phpdate = strtotime( $dob );
+    #$dob = date( 'Y-m-d', $phpdate );
+
+
+    $age_group = $_REQUEST['age_group'];
 	
 	$email = mysql_escape_string($_REQUEST['email']);
 	$gender = mysql_escape_string($_REQUEST['gender']);
@@ -112,12 +115,12 @@ if (isset($_REQUEST['card_id']))
 		{
 			//no consumers with this card are registerd
 			//add new consumer
-			$statement = DB::get()->prepare("INSERT INTO tbl_users (user_name, user_card_id, user_gender, user_dob, user_postcode, user_ethical_pref, user_email, user_type, user_character, user_employment_status, hear_about_us, business_name, business_postcode, is_trader, is_manufacturer, is_wholesaler, is_retailer, is_service, is_fixed_trader, is_non_fixed_trader, user_business_lat, user_business_lon, goods_services, statement, pass_key, user_pass) values
-			(:uname, :rfid, :gender, :dob, :postcode, :ethical_pref, :email, :type, :movie, :estatus, :hear, :bname, :bpc, :trader, :manufacturer, :wholesaler, :retailer, :service, :fixed_trader, :non_fixed_trader, :lat, :lon, :items, :trader_statement, :passkey, :upass)");
+			$statement = DB::get()->prepare("INSERT INTO tbl_users (user_name, user_card_id, user_gender, user_age_group, user_postcode, user_ethical_pref, user_email, user_type, user_character, user_employment_status, hear_about_us, business_name, business_postcode, is_trader, is_manufacturer, is_wholesaler, is_retailer, is_service, is_fixed_trader, is_non_fixed_trader, user_business_lat, user_business_lon, goods_services, statement, pass_key, user_pass) values
+			(:uname, :rfid, :gender, :age_group, :postcode, :ethical_pref, :email, :type, :movie, :estatus, :hear, :bname, :bpc, :trader, :manufacturer, :wholesaler, :retailer, :service, :fixed_trader, :non_fixed_trader, :lat, :lon, :items, :trader_statement, :passkey, :upass)");
 			$statement->bindParam(':uname', $account_name, PDO::PARAM_STR);
 			$statement->bindParam(':rfid', $card_id, PDO::PARAM_STR);
 			$statement->bindParam(':gender', $gender, PDO::PARAM_STR);
-			$statement->bindParam(':dob', $dob, PDO::PARAM_STR);
+			$statement->bindParam(':age_group', $age_group, PDO::PARAM_STR);
 			$statement->bindParam(':postcode', $postcode, PDO::PARAM_STR);
 			$statement->bindParam(':ethical_pref', $ethical_pref, PDO::PARAM_STR);
 			$statement->bindParam(':email', $email, PDO::PARAM_STR);
