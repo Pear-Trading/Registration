@@ -407,7 +407,7 @@ System coordinator</p>
                     <div class="form-group control-group">
          <label class="control-label col-lg-2" for="barter_card"> </label>
                   <div class="col-lg-10 controls">
-                <label  for="barter_card">Where did you get your BARTER card?
+                <label  for="barter_card">Where did you pick up your Pear Card?
                      <select id="barter_card" name="barter_card" class="form-control">
                      <option value="other">Other</option>
                      <?php $data = get_bartercard_businesses();
