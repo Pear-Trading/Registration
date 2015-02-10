@@ -12,7 +12,7 @@ require './config/utils.php';
     <link href="./config/style.css" rel="stylesheet">
     <link href="./config/css/datepicker.css" rel="stylesheet">
     <link href="./config/css/bootstrap-glyphicons.css" rel="stylesheet">  
-    <link rel="icon" type="image/png" href="../images/fav.png">
+    <link rel="icon" type="image/png" href="images/fav.png">
 	<script src="http://code.jquery.com/jquery.js"></script>
     <script src="./config/js/bootstrap.min.js"></script>
     <script src="./config/js/jqBootstrapValidation.js"></script>
@@ -233,7 +233,7 @@ System coordinator</p>
               <div class="col-lg-10">
               		<label for="card_id">Please enter the ID shown on your Pear card <a class="hover_span">help
                     <div class="hover_content"><p>You need to type in here all the digits of your card number with no spaces.</p>
-                    <img src="<?=BASE_URL?>/images/card_example.png" alt='logo' class="card_exmaple"/></div></a>
+                    <img src="images/card_example.png" alt='logo' class="card_exmaple"/></div></a>
                 		<input id="card_id" name="card_id" style="text-transform:uppercase" type="text" placeholder="0462478AF52680" class="form-control" required data-validation-ajax-ajax="php/check_rfid.php" maxlength="20">
                 	</label>
                 <p class="help-block"></p>
@@ -579,22 +579,22 @@ System coordinator</p>
                   <div class="col-lg-10 controls">
                    Select the options that best describe your business
                     <label class="checkbox" for="manufacturer">
-                     <img src="../images/manufacturer_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                     <img src="images/manufacturer_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
                       <br /><input type="checkbox" name="trader_type[]" id="manufacturer" value="manufacturer" minchecked="1" data-validation-minchecked-message="You must select at least one type of business.">
                       Manufacturing<br />
                     </label><br />
                      <label class="checkbox" for="wholesaler">
-                     <img src="../images/wholesaler_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                     <img src="images/wholesaler_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
                        <br /><input type="checkbox" name="trader_type[]" id="wholesaler" value="wholesaler">
                       Wholesaling<br />
                     </label><br />
                     <label class="checkbox" for="retailer">
-                     <img src="../images/retail_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                     <img src="images/retail_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
                        <br /><input type="checkbox" name="trader_type[]" id="retailer" value="retailer">
                       Retailing<br />
                     </label><br />
                     <label class="checkbox" for="service">
-                     <img src="../images/service_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                     <img src="images/service_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
                        <br /><input type="checkbox" name="trader_type[]" id="service" value="service" >
                       Service<br />
                     </label>
@@ -608,12 +608,12 @@ System coordinator</p>
                   <div class="col-lg-10 controls">
                    Select the options that best describes how you perform transactions
                     <label class="checkbox" for="fixed">
-                    <img src="../images/fixed_icon_on copy.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                    <img src="images/fixed_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
                        <br /><input type="checkbox" name="transaction_types[]" id="fixed"  value="fixed" minchecked="1" data-validation-minchecked-message="You must select at least one stlye of trading.">
                       In a fixed location<br />(business premises, market stall etc)
                     </label><br />
                     <label class="checkbox" for="normadic" style="margin:10px 0 0 0;">
-                     <img src="../images/location_icon_on.png" width="50px" style="clear:both; float:left; margin: 0 20px 0 0;"/>
+                     <img src="images/location_icon_on.png" width="50px" style="clear:both; float:left; margin: 0 20px 0 0;"/>
                        <br /><input type="checkbox" name="transaction_types[]"  id="normadic" value="normadic">
                       In varying locations<br />(at customers premises) 
                     </label>
