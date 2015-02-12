@@ -608,7 +608,7 @@ System coordinator</p>
                   <div class="col-lg-10 controls">
                       <label for="terms-and-conditions">
                       	<input type="checkbox"  name="terms-and-conditions" required data-validation-required-message="You must agree to the terms and conditions">
-                        I agree to the <a href="<?=BASE_URL?>/tc/" target="_blank">terms and conditions</a>
+                        I agree to the <a href="http://www.peartrade.org/terms-and-conditions.html" target="_blank">terms and conditions</a>
                      </label>
                     <p class="help-block"></p>
                   </div>
