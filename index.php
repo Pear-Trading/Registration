@@ -599,7 +599,7 @@ System coordinator</p>
                   Economic well-being
                 </label>
                 <p class="help-block"></p>
-                <a href="http://sustainablebusinessforum.com/miketyrrell/57395/quintuple-bottom-line" target="_blank">more info</a>
+                <a href="http://www.smallgreenconsultancy.co.uk/the-four-bottom-lines-overview.html" target="_blank">more info</a>
               </div>
             </div>
             
