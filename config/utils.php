@@ -458,36 +458,41 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
 	 
 		return $array;
 	}
-	
-	function get_bartercard_businesses()
-	{
-		//get the consumer_rfid from the databas
-		$stmt = DB::get()->prepare("SELECT * FROM tbl_barter_businesses ORDER BY RAND()");
-		$stmt->execute();
-			
-		//setting the fetch mode  
-		$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		$stmt->bindColumn('b_name', $bname);
-		$stmt->bindColumn('b_url', $burl);
-		$stmt->bindColumn('b_type', $btype);
-		$stmt->bindColumn('b_contact_number', $bnumber);
-		$stmt->bindColumn('b_contact_person', $bperson);
-		$stmt->fetch(PDO::FETCH_BOUND);
-		$row = $stmt->rowCount();
-			
-		$businesses = array();
-		if ($row != 0)
-		{
-			foreach ($rows as $item) 
-			{
-				$business = array();
-				array_push($business, $item['b_name'],$item['b_url'],$item['b_type'],$item['b_contact_number'],$item['b_contact_person']);
-				array_push($businesses,$business);
-			}
-		}	
-		return $businesses;
-	}
-	
+
+    function get_bartercard_businesses()
+    {
+        $stmt = DB::get()->prepare(
+            "SELECT
+            b_name, b_url, b_contact_number, b_contact_person
+            FROM tbl_barter_businesses
+            ORDER BY b_name ASC"
+        );
+        $stmt->execute();
+
+        //setting the fetch mode
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->bindColumn('b_name', $bname);
+        $stmt->bindColumn('b_url', $burl);
+        $stmt->bindColumn('b_type', $btype);
+        $stmt->bindColumn('b_contact_number', $bnumber);
+        $stmt->bindColumn('b_contact_person', $bperson);
+        $stmt->fetch(PDO::FETCH_BOUND);
+        $row = $stmt->rowCount();
+
+        $businesses = array();
+        if ($row != 0)
+        {
+            foreach ($rows as $item)
+            {
+                $business = array();
+                array_push($businesses,$item);
+            }
+        }
+
+        shuffle($businesses);
+        return $businesses;
+    }
+
 	function get_project_updates()
 	{
 		//get the consumer_rfid from the databas
