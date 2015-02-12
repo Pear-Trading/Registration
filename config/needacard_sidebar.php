@@ -32,11 +32,7 @@ foreach ($data as $item)
 echo '     </div>
     <h4>Contact us</h4>
     <ul>
-    <li><a href="https://twitter.com/trade_barter" target="_blank">@trade_BARTER</a></li><br />
-    <li><a href="mailto:hello@barterproject.org">hello@barterproject.org</a></li>
-    <li><a href="mailto:mark@barterproject.org">mark@barterproject.org</a></li>
-    <li><a href="mailto:bran@barterproject.org">bran@barterproject.org</a></li>
-    </ul>
-
-    <h2 style="clear:both; text-align:right;"><a href="https://twitter.com/search?q=tradeBARTER&src=typd" target="_blank">#tradeBARTER</a> <span style="font-size:16px; color:#4e4d4d; ">join the community</span></h2>';
+    <li><a href="mailto:hello@barterproject.org">mike@smallgreenconsultancy.co.uk</a></li>
+    <li><a href="http://www.peartrade.org/">http://www.peartrade.org/</a></li>
+    </ul>';
 ?>
