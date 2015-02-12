@@ -578,24 +578,25 @@ System coordinator</p>
           
              <!-- Multiple Radios -->
             <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="ethical_pref">Ethical Preference:<Br /><a class="hover_span">what?
+              <label class="control-label col-lg-2" for="ethical_pref">Community support preference:<Br /><a class="hover_span">what is it for?
                     <div class="hover_content"><p>We will ultimately be using this preference to support local initiatives in these sectors.</p></div></a></label>
+                <div>Please chose the one that you are most keen on supporting</div>
               <div class="col-lg-10">
                 <label class="radio" for="ethical_pref-0">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-0" value="environmental" checked="checked">
-                  Environmental Stewardship
+                  <input type="radio" name="ethical_pref_type" id="ethical_pref-0" value="capacity" checked="checked">
+                  Individual capacity building and learning
                 </label>
                 <label class="radio" for="ethical_pref-1">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-1" value="social">
-                   Social Justice
+                  <input type="radio" name="ethical_pref_type" id="ethical_pref-1" value="community">
+                   Community support and community building
                 </label>
                 <label class="radio" for="ethical_pref-2">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-2" value="economic">
-                Economic Concerns
+                  <input type="radio" name="ethical_pref_type" id="ethical_pref-2" value="environmental">
+                  Environmental stewardship
                 </label>
                 <label class="radio" for="ethical_pref-3">
                   <input type="radio" name="ethical_pref_type" id="ethical_pref-3" value="wellbeing">
-                Wellbeing
+                  Economic well-being
                 </label>
                 <p class="help-block"></p>
                 <a href="http://sustainablebusinessforum.com/miketyrrell/57395/quintuple-bottom-line" target="_blank">more info</a>
