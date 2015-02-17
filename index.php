@@ -200,7 +200,7 @@ require './config/utils.php';
 <p>Welcome to Pear Card!
 Pear Trading Ltd is a local initiative designed to collect local trading data in order to inform both citizens and businesses as to where there money goes and how it flows. The aim is to provide general feedback to the community so we can work together to keep as much of our money in the local economy as possible.</p>
 <p>
-To achieve this we have created a local loyalty card, which you have now decided to register.
+To achieve this we have created a card, which we invite you to register.
 </p>
 <p>
 To help us with this we need some details from you. We don't require your life-story (you have probably already given that to other social media platforms) Just some minimum basic generic information for the system along with your name and card number so we can create an account for you.
