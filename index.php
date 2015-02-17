@@ -156,11 +156,14 @@ require './config/utils.php';
                         // just to confirm ajax submission
                         console.log('submitted successfully!');
                         var received_data = JSON.parse(data);
-                        alert(received_data.message);
 
-                        if(received_data.response == true){
-                            //alert(received_data.message);
-                            window.location = "<?=BASE_URL?>";
+                        document.getElementById('register_result').innerHTML = received_data.message +
+                            "<p><a href='<?=BASE_URL?>'>Go back to the home page.</a></p>";
+
+                        if(received_data.response == true) {
+                            document.getElementById('register_result').className='alert alert-success';
+                        } else {
+                            document.getElementById('register_result').className='alert alert-danger';
                         }
                     }
                 });
@@ -603,8 +606,8 @@ System coordinator</p>
                 </div>
                 <div class="controls controls-row">
                     <button type="submit" class="btn btn-success  btn-lg btn-block">Register</button>
-                    <div id='register_result'></div>
-            		</div>
+                    <div id='register_result' style='margin-top:20px;'></div>
+                </div>
             </fieldset>
             </form>
             <br />
