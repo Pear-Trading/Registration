@@ -6,7 +6,7 @@ require './config/utils.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BARTER - Registration</title>
+    <title>PEAR Trading - Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./config/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="./config/style.css" rel="stylesheet">
