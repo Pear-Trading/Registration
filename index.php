@@ -231,11 +231,12 @@ System coordinator</p>
             <div class="form-group control-group">
               <label class="control-label col-lg-2" for="card_id">Card ID:</label>
               <div class="col-lg-10">
-              		<label for="card_id">Please enter the ID shown on your Pear card <a class="hover_span">help
-                    <div class="hover_content"><p>You need to type in here all the digits of your card number with no spaces.</p>
-                    <img src="images/card_example.png" alt='logo' class="card_exmaple"/></div></a>
-                		<input id="card_id" name="card_id" style="text-transform:uppercase" type="text" placeholder="0462478AF52680" class="form-control" required data-validation-ajax-ajax="php/check_rfid.php" maxlength="20">
-                	</label>
+                    <label for="card_id">Please enter the ID shown on your Pear card <a class="hover_span">help
+                    <div class="hover_content">
+                        <p>You need to type in the card ID on your card. e.g. PEAR01</p>
+                    </div></a>
+                    <input id="card_id" name="card_id" style="text-transform:uppercase" type="text" placeholder="0462478AF52680" class="form-control" required data-validation-ajax-ajax="php/check_rfid.php" maxlength="20">
+                </label>
                 <p class="help-block"></p>
               </div>
             </div>
