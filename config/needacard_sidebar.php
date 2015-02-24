@@ -3,7 +3,7 @@
 echo   '<h2>Need a<br />PEAR card?</h2>
 <h3>join the community</h3>
 <h4>Visit any of these businesses:</h4>
-<div style="height:300px; overflow:scroll; left:0; float:left; list-style:none; margin:10px 0 20px 0; padding 0; width:300px;">';
+<div style="height:300px; overflow:auto; left:0; float:left; list-style:none; margin:10px 0 20px 0; padding 0; width:300px;">';
 
 $data = get_bartercard_businesses();
 
@@ -29,7 +29,7 @@ foreach ($data as $item)
 
         ";
 }
-echo '     </div>
+echo '     </div><div class="clearfix"></div>
     <h4>Contact us</h4>
     <ul>
     <li><a href="mailto:hello@barterproject.org">mike@smallgreenconsultancy.co.uk</a></li>

@@ -285,3 +285,7 @@ textarea {
 		}
 
 		#logged_in_message{position:fixed; bottom:0; left:70px}
+
+.clearfix {
+    clear: both;
+}
