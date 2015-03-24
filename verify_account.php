@@ -32,7 +32,7 @@ if ($row != 1)
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Verify Account - BARTER</title>
+    <title>Verify Account - PEAR trading</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="./config/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -157,7 +157,7 @@ if ($row != 1)
      
 
       <h2>Verify Account</h2>
-      <p class="lead">Before we can officially welcome you to the BARTER project, we need you to create a password</p>
+      <p class="lead">Before we can officially welcome you to the PEAR project, we need you to create a password</p>
 
      
       <div class="row">

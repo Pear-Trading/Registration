@@ -10,6 +10,7 @@ ini_set('display_errors', '0');
 
 //include the database class
 require '../config/con.php';
+require '../config/const.php';
 require '../config/utils.php';
 
 if (isset($_REQUEST['card_id']))
@@ -149,9 +150,11 @@ if (isset($_REQUEST['card_id']))
 			//execute the query
 			if($statement->execute())
 			{	
-				sendEmail($account_name, $email, $pass_key, $user_type,'Welcome to BARTER',$card_id, $business_name);
+				//sendEmail($account_name, $email, $pass_key, $user_type,'Welcome to BARTER',$card_id, $business_name);
 				$ajax_response = true;
-				$ajax_message = "Welcome! $account_name, you have successfully been registered. We will shortly send you an email, you will need follow the instructions in order to verify your account with us.";
+				//$ajax_message = "Welcome! $account_name, you have successfully been registered. We will shortly send you an email, you will need follow the instructions in order to verify your account with us.";
+
+				$ajax_message = '<a href="' . BASE_URL . 'registration/verify_account.php?id='.$pass_key.'">Verify Account</a>';
 			}
 			else
 			{
