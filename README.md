@@ -11,4 +11,12 @@ To set this up, modify the following config files to contain the required data:
 * config/con.php.example
 * config/const.php.example
 
-And save them without the `.example` suffix.
+And save them without the `.example` suffix. The next step is to synchronise
+these to the server, which you will need to know the IP or hostname, and target
+folder for the app, and the ssh password and username.
+
+```
+rsync -v -e ssh --exclude '.git' --exclude 'pear.sql' --exclude '*.example' \
+  --exclude 'migrations' -r --delete . username@hostname:/path/to/target
+```
+
