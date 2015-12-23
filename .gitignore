@@ -1,2 +1,4 @@
+config/con.php
+config/const.php
 .*.swp*
 .*.swo*

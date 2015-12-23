@@ -6,7 +6,7 @@
 		public static function get(){
 			if(self::$instance == null){
 				try{
-					self::$instance = new PDO('mysql:host=localhost;dbname=DB HERE', 'DB USERNAME HERE', 'PASSWORD_HERE');
+					self::$instance = new PDO('mysql:host=localhost;dbname=DB NAME', 'DB USER', 'DB PASSWORD');
 				}
 				catch(PDOException $e){
 					throw $e;
