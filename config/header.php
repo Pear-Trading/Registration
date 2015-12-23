@@ -1,7 +1,7 @@
 <?php
 
 include_once( 'const.php');
-echo '<div id="header_img"><a href="' . BASE_URL . '"><img src="' . BASE_URL . 'images/pear_logo.png" alt="logo" id="logo" /></a></div>
+echo '<div id="header_img"><a href="' . BASE_URL . '"><img src="' . BASE_URL . '/images/pear_logo.png" alt="logo" id="logo" /></a></div>
 <div class="header_container">
 
       <div class="navbar">
