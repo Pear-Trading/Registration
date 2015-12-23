@@ -5,6 +5,11 @@ html
 	height:100%;
 }
 
+#logo {
+  width: 70px;
+  height: 70px;
+}
+
 button,input:focus,input[type="button"]:focus::-moz-focus-inner, { 
 	border : none;
 	-moz-border-radius:7px;
