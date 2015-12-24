@@ -1,15 +1,11 @@
-<?php
-
-echo   '<h2>Need a<br />PEAR card?</h2>
+<h2>Need a PEAR card?</h2>
 <h3>join the community</h3>
 <h4>Visit any of these businesses:</h4>
-<div style="height:300px; overflow:auto; left:0; float:left; list-style:none; margin:10px 0 20px 0; padding 0; width:300px;">';
+<div class="sidebar_business_list">
+<?php
+  $data = get_bartercard_businesses();
 
-$data = get_bartercard_businesses();
-
-foreach ($data as $item)
-{
-    //array_push($business, $item['b_name'],$item['b_url'],$item['b_type'],$item['b_contact_number'],$item['b_contact_person']);
+  foreach ($data as $item) {
 
     if ($item['b_contact_number'] != "")
     {
@@ -19,20 +15,23 @@ foreach ($data as $item)
     {
         $contact = "";
     }
-
-    echo "
-        <div style='background:#fff; padding: 10px; margin:0px'>
-        <h4>".$item['b_name']."</h4>
-        <a href='".$item['b_url']."' target='_blank'>".$item['b_url']."</a>
-        <p>".$contact."</p>
-        </div>
-
-        ";
-}
-echo '     </div><div class="clearfix"></div>
-    <h4>Contact us</h4>
-    <ul>
-    <li><a href="mailto:hello@barterproject.org">mike@smallgreenconsultancy.co.uk</a></li>
-    <li><a href="http://www.peartrade.org/">http://www.peartrade.org/</a></li>
-    </ul>';
 ?>
+  <div class="sidebar_business_list_item">
+    <h4><? echo $item['b_name'] ?></h4>
+    <a href=' <? echo $item['b_url'] ?>' target='_blank'><? echo $item['b_url'] ?></a>
+    <p><? echo $contact ?></p>
+  </div>
+<?
+  }
+?>
+</div>
+<div class="clearfix"></div>
+<h4>Contact us</h4>
+<ul>
+  <li>
+    <a href="mailto:hello@barterproject.org">mike@smallgreenconsultancy.co.uk</a>
+  </li>
+  <li>
+    <a href="http://www.peartrade.org/">http://www.peartrade.org/</a>
+  </li>
+</ul>

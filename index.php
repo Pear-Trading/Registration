@@ -11,8 +11,9 @@ require 'config/utils.php';
     <title>PEAR Trading - Registration</title>
 
     <link href="config/css/bootstrap.min.css" rel="stylesheet">
-    <link href="config/style.css" rel="stylesheet">
     <link href="config/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="config/style.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="config/js/bootstrap.min.js"></script>
