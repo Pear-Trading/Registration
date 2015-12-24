@@ -6,16 +6,17 @@ require 'config/utils.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PEAR Trading - Registration</title>
-    <link href="config/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="config/style.css" rel="stylesheet">
-    <link href="config/css/datepicker.css" rel="stylesheet">
-    <link href="config/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/fav.png">
-	<script src="http://code.jquery.com/jquery.js"></script>
+    <title>PEAR Trading - Registration</title>
+
+    <link href="config/css/bootstrap.min.css" rel="stylesheet">
+    <link href="config/style.css" rel="stylesheet">
+    <link href="config/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery.js"></script>
     <script src="config/js/bootstrap.min.js"></script>
     <script src="config/js/jqBootstrapValidation.js"></script>
-    <script src="config/js/bootstrap-datepicker.js"></script>
 
     <script>
     $(function(){
@@ -290,7 +291,7 @@ System coordinator</p>
             
             
              <div class="form-group control-group">
-         <label class="control-label col-lg-2" for="datepicker">Age Group: <br /></label>
+         <label class="control-label col-lg-2" for="age_group">Age Group: <br /></label>
               <div class="col-lg-10 controls">
                 <label  >
                    <select id="age_group" name="age_group" class="form-control">
