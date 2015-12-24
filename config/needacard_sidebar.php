@@ -6,13 +6,9 @@
   $data = get_bartercard_businesses();
 
   foreach ($data as $item) {
-
-    if ($item['b_contact_number'] != "")
-    {
+    if ( ! empty( $item['b_contact_number'] ) ) {
         $contact = $item['b_contact_person']." (".$item['b_contact_number'].")";
-    }
-    else
-    {
+    } else {
         $contact = "";
     }
 ?>
