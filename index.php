@@ -1,22 +1,21 @@
 <?php
-require './config/con.php';
-require './config/const.php';
-require './config/utils.php';
+require 'config/con.php';
+require 'config/const.php';
+require 'config/utils.php';
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <title>PEAR Trading - Registration</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./config/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="./config/style.css" rel="stylesheet">
-    <link href="./config/css/datepicker.css" rel="stylesheet">
-    <link href="./config/css/bootstrap-glyphicons.css" rel="stylesheet">  
+    <link href="config/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="config/style.css" rel="stylesheet">
+    <link href="config/css/datepicker.css" rel="stylesheet">
+    <link href="config/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/fav.png">
 	<script src="http://code.jquery.com/jquery.js"></script>
-    <script src="./config/js/bootstrap.min.js"></script>
-    <script src="./config/js/jqBootstrapValidation.js"></script>
-    <script src="./config/js/bootstrap-datepicker.js"></script>
+    <script src="config/js/bootstrap.min.js"></script>
+    <script src="config/js/jqBootstrapValidation.js"></script>
+    <script src="config/js/bootstrap-datepicker.js"></script>
 
     <script>
     $(function(){
