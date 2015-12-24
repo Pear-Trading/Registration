@@ -28,7 +28,9 @@
 <h4>Contact us</h4>
 <ul>
   <li>
-    <a href="mailto:hello@barterproject.org">mike@smallgreenconsultancy.co.uk</a>
+    <a href="mailto:mike@smallgreenconsultancy.co.uk">
+      mike@smallgreenconsultancy.co.uk
+    </a>
   </li>
   <li>
     <a href="http://www.peartrade.org/">http://www.peartrade.org/</a>
