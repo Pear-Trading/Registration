@@ -113,18 +113,27 @@ require 'config/utils.php';
             <div class="form-group control-group">
               <label class="control-label col-lg-2" for="account">Account Type:</label>
               <div class="col-lg-10">
-                <label class="radio" for="account-0">
-                <input type="radio" name="account" id="account-0" value="customer" checked="checked"> 
-                  Customer
-                </label>
-                <label class="radio" for="account-1">
-                <input type="radio" name="account" id="account-1" value="business">
-                  Business
-                </label>
-                <label class="radio" for="account-2">
-                <input type="radio" name="account" id="account-2" value="organisation">
-                  Organisation (Not For Profit)
-                </label>
+                  <input
+                    class="account_type"
+                    type="radio"
+                    name="account"
+                    value="customer"
+                    checked> 
+                  <span class="account_type_label">Customer</span>
+                  <br>
+                  <input
+                    class="account_type"
+                    type="radio"
+                    name="account"
+                    value="business">
+                  <span class="account_type_label">Business</span>
+                  <br>
+                <input
+                  class="account_type"
+                  type="radio"
+                  name="account"
+                  value="organisation">
+                <span class="account_type_label">Organisation (Not For Profit)</span>
               </div>
             </div>
             <!-- /Account Type Selection -->
