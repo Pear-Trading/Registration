@@ -18,13 +18,6 @@ require './config/utils.php';
     <script src="./config/js/jqBootstrapValidation.js"></script>
     <script src="./config/js/bootstrap-datepicker.js"></script>
 
-		<script>
-		if (top.location != location) 
-		{
-			top.location.href = document.location.href;
-		}
-	</script>
-
     <script>
     $(function(){
         $('#trader_details').hide();
