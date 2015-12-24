@@ -17,7 +17,7 @@
 ?>
   <div class="sidebar_business_list_item">
     <h4><? echo $item['b_name'] ?></h4>
-    <a href=' <? echo $item['b_url'] ?>' target='_blank'><? echo $item['b_url'] ?></a>
+    <a href="<? echo $item['b_url'] ?>" target="_blank"><? echo $item['b_url'] ?></a>
     <p><? echo $contact ?></p>
   </div>
 <?
