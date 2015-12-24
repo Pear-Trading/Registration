@@ -168,451 +168,425 @@ require 'config/utils.php';
 
   </head>
   <body>
+
     <div id="header">
-    <?php require_once('./config/header.php');?>
+      <?php require_once('./config/header.php');?>
     </div>
-    
-     <div class="container">
+
+   <div class="container">
 
       <h2>Please register your Pear Card Here</h2>
+      <p>
+        Welcome to Pear Card!  Pear Trading Ltd is a local initiative designed
+        to collect local trading data in order to inform both citizens and
+        businesses as to where there money goes and how it flows. The aim is to
+        provide general feedback to the community so we can work together to
+        keep as much of our money in the local economy as possible.
+      </p>
+      <p>
+        To achieve this we have created a card, which we invite you to register.
+      </p>
+      <p>
+        To help us with this we need some details from you. We don't require
+        your life-story (you have probably already given that to other social
+        media platforms) Just some minimum basic generic information for the
+        system along with your name and card number so we can create an account
+        for you.
+      </p>
+      <p>
+        We promise we will not share your personally identifiable data with any
+        third parties. As a business member people obviously need to know how
+        to identify you so they can use your services. Beyond that we will
+        leave it to both citizens and businesses how much they reveal about
+        themselves as the social and interactive aspects of the Pear Trading
+        platform grows.
+      </p>
+      <p>
+        Michael Hallam
+      </p>
+      <p>
+        System coordinator
+      </p>
 
-<p>Welcome to Pear Card!
-Pear Trading Ltd is a local initiative designed to collect local trading data in order to inform both citizens and businesses as to where there money goes and how it flows. The aim is to provide general feedback to the community so we can work together to keep as much of our money in the local economy as possible.</p>
-<p>
-To achieve this we have created a card, which we invite you to register.
-</p>
-<p>
-To help us with this we need some details from you. We don't require your life-story (you have probably already given that to other social media platforms) Just some minimum basic generic information for the system along with your name and card number so we can create an account for you.
+      <iframe
+        width="560"
+        height="315"
+        src="//www.youtube.com/embed/1uQxQyAZEAk"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
 
-</p>
-<p>
-We promise we will not share your personally identifiable data with any third parties. As a business member people obviously need to know how to identify you so they can use your services. Beyond that we will leave it to both citizens and businesses how much they reveal about themselves as the social and interactive aspects of the Pear Trading platform grows.
-</p>
-<p>
-Michael Hallam
-</p>
-<p>
-System coordinator</p>
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/1uQxQyAZEAk" frameborder="0" allowfullscreen></iframe>
-
-     
       <div class="row">
-        <div class="col-12 col-sm-8 col-lg-8">
 
-            <form class="form-horizontal"  id="add_user_form" name="add_user_form" action="php/add_user.php" method="post">
+        <div class="col-12 col-sm-8 col-lg-8">
+          <form class="form-horizontal"  id="add_user_form" name="add_user_form" action="php/add_user.php" method="post">
             <fieldset>
             
-            <!-- Form Name -->
             <legend>Account Details</legend>
   
-            <!-- Text input-->
+            <!-- Card ID Input -->
             <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="card_id">Card ID:</label>
+              <label class="control-label col-lg-2" for="card_id">
+                Card ID:
+              </label>
               <div class="col-lg-10">
-                    <label for="card_id">Please enter the ID shown on your Pear card <a class="hover_span">help
+                <label for="card_id">
+                  Please enter the ID shown on your Pear card
+                  <a class="hover_span">
+                    help
                     <div class="hover_content">
-                        <p>You need to type in the card ID on your card. e.g. PEAR01</p>
-                    </div></a>
-                    <input id="card_id" name="card_id" style="text-transform:uppercase" type="text" placeholder="0462478AF52680" class="form-control" required data-validation-ajax-ajax="php/check_rfid.php" maxlength="20">
+                      <p>You need to type in the card ID on your card. e.g. PEAR01</p>
+                    </div>
+                  </a>
+                  <input
+                    id="card_id"
+                    name="card_id"
+                    style="text-transform:uppercase"
+                    type="text"
+                    placeholder="PEAR01"
+                    class="form-control"
+                    required
+                    data-validation-ajax-ajax="php/check_rfid.php"
+                    maxlength="20"
+                  >
                 </label>
-                <p class="help-block"></p>
+                <p class="help-block"><!-- Empty for errors --></p>
               </div>
             </div>
-            
-              <!-- Multiple Radios -->
+            <!-- /Card ID Input -->
+
+            <!-- Account Type Selection -->
             <div class="form-group control-group">
               <label class="control-label col-lg-2" for="account">Account Type:</label>
               <div class="col-lg-10">
-               <label class="radio" for="account-0">
-                  <input type="radio" name="account" id="account-0" value="customer" checked="checked"> 
+                <label class="radio" for="account-0">
+                <input type="radio" name="account" id="account-0" value="customer" checked="checked"> 
                   Customer
                 </label>
                 <label class="radio" for="account-1">
-                  <input type="radio" name="account" id="account-1" value="business">
+                <input type="radio" name="account" id="account-1" value="business">
                   Business
                 </label>
                 <label class="radio" for="account-2">
-                  <input type="radio" name="account" id="account-2" value="organisation">
-                Organisation (Not For Profit)
+                <input type="radio" name="account" id="account-2" value="organisation">
+                  Organisation (Not For Profit)
                 </label>
               </div>
             </div>
+            <!-- /Account Type Selection -->
             
-            <!-- Text input-->
+            <!-- Name Input -->
             <div class="form-group control-group">
               <label class="control-label col-lg-2" for="name">Your Name:</label>
               <div class="col-lg-10 controls">
-              		 <label for="account_name"><h5 id="account_name">Please enter your full name</h5>
-                		<input id="account_name" name="account_name" type="text" placeholder="full name" class="form-control" required>
-                   </label>
+                <label for="account_name">
+                  <h5 id="account_name">Please enter your full name</h5>
+                  <input
+                    id="account_name"
+                    name="account_name"
+                    type="text"
+                    placeholder="Full Name"
+                    class="form-control"
+                    required
+                  >
+                </label>
                 <p class="help-block"></p>
               </div>
             </div>
- 
+            <!-- /Name Input --> 
            
-            <!-- Text input-->
+            <!-- Email Input -->
             <div class="form-group control-group">
               <label class="control-label col-lg-2" for="email">Email Address:</label>
-              <div class="col-lg-10 controls">
-                   <label  for="email"><h5>We will send you an email in order for you to verify your account</h5>
-                        <input id="email" name="email" type="email" placeholder="email address" class="form-control" required>
-                    </label>
-                    <p class="help-block"></p>
-              </div>
-            </div>
-            
-
- <!-- Text input-->
-            <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="postcode">Postcode: <br /></label>
-              <div class="col-lg-10 controls">
-                    <table>
-                    <tr>
-                    <td> <label for="postcode"><input id="postcode" name="postcode"  type="text" placeholder="LA1 4XX" class="form-control" maxlength="8" required 
-                    data-validation-regex-regex="[A-Za-z][A-Za-z][0-9R][0-9A-Za-z ][ ]?[0-9][A-Za-z][A-Za-z]"
-                    data-validation-regex-message="Please enter a valid UK postcode"  size="8" style="text-transform:uppercase">
-                    </label></td>
-                    <!--<td><label for="postcode1"><input id="postcode1" name="postcode1"  type="text" placeholder="4XX" class="form-control" maxlength="3" required 
-                    data-validation-regex-regex="[0-9][A-Z||a-z][A-Z||a-z]"
-                    data-validation-regex-message="Please enter a valid UK postcode"  size="3"></td>
-                      </label>--></tr>
-                      
-                    </table>
-                  
-
-                <!-- 
-                
-                onKeyDown="this.value=this.value.toUpperCase()"
-                
-                data-validation-regex-regex="^([A-PR-UWYZ](([0-9](([0-9]|[A-HJKSTUW])?)?)|([A-HK-Y][0-9]([0-9]|[ABEHMNPRVWXY])?)) [0-9][ABD-HJLNP-UW-Z]{2})|GIR 0AA$" -->
+              <div class="col-lg-4 controls">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="email address"
+                  class="form-control"
+                  required>
+                <p>(We will only use this to verify your account)</p>
                 <p class="help-block"></p>
               </div>
             </div>
+            <!-- /Email Input -->
             
-            
-             <div class="form-group control-group">
-         <label class="control-label col-lg-2" for="age_group">Age Group: <br /></label>
-              <div class="col-lg-10 controls">
-                <label  >
-                   <select id="age_group" name="age_group" class="form-control">
-                        <option>Under 20</option>
-                        <option>20-29</option>
-                        <option>30-39</option>
-                        <option>40-49</option>
-                        <option>50-59</option>
-                        <option>60-69</option>
-                        <option>70+</option>
-                   </select>
-                </label>
-             </div>
-         </div>
-	
-            <!-- Multiple Radios (inline) -->
+
+            <!-- Postcode Input -->
             <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="gender">Gender: <br /></label>
-         	  <div class="col-lg-10 controls">
-               <label  for="gender">
+              <label class="control-label col-lg-2" for="postcode">Postcode:</label>
+              <div class="col-lg-4 controls">
+                <input
+                  id="postcode"
+                  name="postcode"
+                  type="text"
+                  placeholder="LA1 4XX"
+                  class="form-control"
+                  maxlength="8"
+                  required 
+                  data-validation-regex-regex="[A-Za-z][A-Za-z][0-9R][0-9A-Za-z ][ ]?[0-9][A-Za-z][A-Za-z]"
+                  data-validation-regex-message="Please enter a valid UK postcode"
+                  size="8"
+                  style="text-transform:uppercase"
+                >
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <!-- /Postcode Input -->
+
+            <!-- Age Group Input -->
+            <div class="form-group control-group">
+              <label class="control-label col-lg-2" for="age_group">Age Group:</label>
+              <div class="col-lg-4 controls">
+                <select id="age_group" name="age_group" class="form-control">
+                  <option>Under 20</option>
+                  <option>20-29</option>
+                  <option>30-39</option>
+                  <option>40-49</option>
+                  <option>50-59</option>
+                  <option>60-69</option>
+                  <option>70+</option>
+                </select>
+              </div>
+            </div>
+            <!-- /Age Group Input -->
+	
+            <!-- Gender Input -->
+            <div class="form-group control-group">
+              <label class="control-label col-lg-2" for="gender">Gender:</label>
+              <div class="col-lg-4 controls">
                 <select id="gender" name="gender" class="form-control">
                   <option value="F">Female</option>
                   <option value="M">Male</option>
                   <option value="T">Transgender</option>
                   <option value="0">Rather not say</option>
                 </select>
-                </label>
               </div>
             </div>
-            
-           
-            
-           
-            
-            
-            <!-- Select Basic -->
-           <!-- <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="ethical_pref">Ethical Preference:<Br /><a class="hover_span">what?
-                    <div class="hover_content"><p>We will ultimately be using this preference to support local initiatives in these sectors.</p></div></a></label>
-              <div class="col-lg-10 controls">
-              
-               <!-- <select id="ethical_pref" name="ethical_pref" class="form-control">
-                  <option value="education">Education</option>
-                  <option value="building_communities">Building Communities</option>
-                  <option value="protecting_nature_wildlife">Protecting Nature &amp; Wildlife</option>
-                  <option value="environmental_impact">Environmental Impact</option>
-                  <option value="community_ownership">Community Ownership</option>
-                  <option value="economy">Economy</option>
-                </select>-->
-                
-                 <!--<label class="checkbox" for="environmental">
-             			<input type="checkbox" name="ethical_pref[]" id="environmental" value="environmental" minchecked="1" data-validation-minchecked-message="You must select at least one ethical preference.">
-                      Environmental Stewardship
-                    </label><br />
-                    
-                     <label class="checkbox" for="social">
-             			<input type="checkbox" name="ethical_pref[]" id="social" value="social" >
-                      Social Justice
-                    </label><br />
-                    
-                     <label class="checkbox" for="economic">
-             			<input type="checkbox" name="ethical_pref[]" id="economic" value="economic" >
-                      Economic Concerns
-                    </label><br />
-                    
-                     <label class="checkbox" for="wellbeing">
-             			<input type="checkbox" name="ethical_pref[]" id="wellbeing" value="wellbeing" >
-                      Wellbeing
-                    </label><br />
-                    
-                    <p class="help-block"></p>
-                    
-                    
-              </div>
-            </div>-->
+
+            <!-- Customer Details Set -->
             <div id="customer_details">
-            	   <div class="form-group control-group">
-          <label class="control-label col-lg-2" for="employment_status"> </label>
-                  <div class="col-lg-10 controls">
-                <label  for="employment_status">Employment Status
-                     <select id="employment_status" name="employment_status" class="form-control">
-                        <option value="self_employed">Self Employed</option>
-                        <option value="employed">Employed</option>
-                        <option value="student">Student</option>
-                        <option value="unpaid carer">Unpaid Carer</option>
-                        <option value="looking for work">Looking for work</option>
-                        <option value="other">Other</option>
-                        <option value="unknown">Rather not say</option>
-                    </select>
+
+              <!-- Customer Employment Status -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="employment_status">
+                  Employment Status:
+                </label>
+                <div class="col-lg-4 controls">
+                  <select id="employment_status" name="employment_status" class="form-control">
+                    <option value="self_employed">Self Employed</option>
+                    <option value="employed">Employed</option>
+                    <option value="student">Student</option>
+                    <option value="unpaid carer">Unpaid Carer</option>
+                    <option value="looking for work">Looking for work</option>
+                    <option value="other">Other</option>
+                    <option value="unknown">Rather not say</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /Customer Employment Status -->
+
+              <!-- From Where Input -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="barter_card"> </label>
+                <div class="col-lg-10 controls">
+                  <label  for="barter_card">Where did you pick up your Pear Card?
+                    <input placeholder='Business name' type='text' id="barter_card" name="barter_card" class="form-control">
                   </label>
-                 </div>
-                 </div>
-                 
-                    <div class="form-group control-group">
-         <label class="control-label col-lg-2" for="barter_card"> </label>
-                  <div class="col-lg-10 controls">
-                <label  for="barter_card">Where did you pick up your Pear Card?
-                     <input placeholder='Business name' type='text' id="barter_card" name="barter_card" class="form-control">
-                  </label>
-                 </div>
-                 </div>
+                </div>
+              </div>
+              <!-- /From Where Input -->
+
             </div>
-          
-            <!--<div id="trader_details" style="display:none">-->
+            <!-- /Customer Details Set -->
+
+            <!-- Business Details Set -->
             <div id="trader_details">
-                   <!-- Text input-->
-            <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="name">Business Name:</label>
-              <div class="col-lg-10 controls">
-              		 <label for="account_business_name">
-                		<input id="account_business_name" name="account_business_name" type="text" placeholder="" class="form-control"  >
-                   </label>
-                <p class="help-block"></p>
-              </div>
-            </div>
-            
-            
-             <!-- Text input-->
-            <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="postcode">Business Postcode: <br /></label>
-              <div class="col-lg-10 controls">
-                    <table>
-                    <tr>
-                    <td> <label for="b_postcode">
-                    <input id="b_postcode" name="b_postcode"  type="text" placeholder="LA1 4ZZ" class="form-control" maxlength="8" required 
-                    data-validation-regex-regex="[A-Za-z][A-Za-z][0-9R][0-9A-Za-z ][ ]?[0-9][A-Za-z][A-Za-z]"
-                    data-validation-regex-message="Please enter a valid UK postcode"  size="8" style="text-transform:uppercase" >
-                    </label></td>
-                    <!--<td><label for="b_postcode1"><input id="b_postcode1" name="b_postcode1"  type="text" placeholder="4XX" class="form-control" maxlength="3" required 
-                    data-validation-regex-regex="[0-9][A-Z||a-z][A-Z||a-z]"
-                    data-validation-regex-message="Please enter a valid UK postcode"  size="3"></td>
-                      </label>--></tr>
-                      
-                    </table>
-                  
 
-                <!-- 
-                
-                onKeyDown="this.value=this.value.toUpperCase()"
-                
-                data-validation-regex-regex="^([A-PR-UWYZ](([0-9](([0-9]|[A-HJKSTUW])?)?)|([A-HK-Y][0-9]([0-9]|[ABEHMNPRVWXY])?)) [0-9][ABD-HJLNP-UW-Z]{2})|GIR 0AA$" -->
-                <p class="help-block"></p>
-              </div>
-            </div>
-            
-                <!-- Multiple Checkboxes -->
-                <div class="form-group control-group">
-                  <label class="control-label col-lg-2" for="trader_type">Type of Business:</label>
-                  <div class="col-lg-10 controls">
-                   Select the options that best describe your business
-                    <label class="checkbox" for="manufacturer">
-                     <img src="images/manufacturer_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
-                      <br /><input type="checkbox" name="trader_type[]" id="manufacturer" value="manufacturer" minchecked="1" data-validation-minchecked-message="You must select at least one type of business.">
-                      Manufacturing<br />
-                    </label><br />
-                     <label class="checkbox" for="wholesaler">
-                     <img src="images/wholesaler_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
-                       <br /><input type="checkbox" name="trader_type[]" id="wholesaler" value="wholesaler">
-                      Wholesaling<br />
-                    </label><br />
-                    <label class="checkbox" for="retailer">
-                     <img src="images/retail_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
-                       <br /><input type="checkbox" name="trader_type[]" id="retailer" value="retailer">
-                      Retailing<br />
-                    </label><br />
-                    <label class="checkbox" for="service">
-                     <img src="images/service_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
-                       <br /><input type="checkbox" name="trader_type[]" id="service" value="service" >
-                      Service<br />
-                    </label>
-                    <p class="help-block"></p>
-                  </div>
+              <!-- Business Name Input -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="name">Business Name:</label>
+                <div class="col-lg-10 controls">
+                  <label for="account_business_name">
+                    <input id="account_business_name" name="account_business_name" type="text" placeholder="" class="form-control"  >
+                  </label>
+                  <p class="help-block"></p>
                 </div>
-                
-                <!-- Multiple Checkboxes -->
-                <div class="form-group control-group">
-                  <label class="control-label col-lg-2" for="transaction_types">Style of Business:</label>
-                  <div class="col-lg-10 controls">
-                   Select the options that best describes how you perform transactions
-                    <label class="checkbox" for="fixed">
+              </div>
+              <!-- /Business Name Input -->
+
+
+              <!-- Business Postcode Input -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="postcode">Business Postcode: <br /></label>
+                <div class="col-lg-10 controls">
+                  <label for="b_postcode">
+                    <input
+                      id="b_postcode"
+                      name="b_postcode"
+                      type="text"
+                      placeholder="LA1 4ZZ"
+                      class="form-control"
+                      maxlength="8"
+                      required 
+                      data-validation-regex-regex="[A-Za-z][A-Za-z][0-9R][0-9A-Za-z ][ ]?[0-9][A-Za-z][A-Za-z]"
+                      data-validation-regex-message="Please enter a valid UK postcode"  size="8" style="text-transform:uppercase">
+                  </label>
+                  <p class="help-block"></p>
+                </div>
+              </div>
+              <!-- /Business Postcode Input -->
+
+              <!-- Multiple Checkboxes -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="trader_type">Type of Business:</label>
+                <div class="col-lg-10 controls">
+                  Select the options that best describe your business
+                  <label class="checkbox" for="manufacturer">
+                    <img src="images/manufacturer_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                    <br /><input type="checkbox" name="trader_type[]" id="manufacturer" value="manufacturer" minchecked="1" data-validation-minchecked-message="You must select at least one type of business.">
+                    Manufacturing<br />
+                  </label><br />
+                  <label class="checkbox" for="wholesaler">
+                    <img src="images/wholesaler_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                    <br /><input type="checkbox" name="trader_type[]" id="wholesaler" value="wholesaler">
+                    Wholesaling<br />
+                  </label><br />
+                  <label class="checkbox" for="retailer">
+                    <img src="images/retail_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                    <br /><input type="checkbox" name="trader_type[]" id="retailer" value="retailer">
+                    Retailing<br />
+                  </label><br />
+                  <label class="checkbox" for="service">
+                    <img src="images/service_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
+                    <br /><input type="checkbox" name="trader_type[]" id="service" value="service" >
+                    Service<br />
+                  </label>
+                  <p class="help-block"></p>
+                </div>
+              </div>
+
+              <!-- Multiple Checkboxes -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="transaction_types">Style of Business:</label>
+                <div class="col-lg-10 controls">
+                  Select the options that best describes how you perform transactions
+                  <label class="checkbox" for="fixed">
                     <img src="images/fixed_icon_on.png" width="50px" style="float:left; margin: 0 20px 0 0;"/>
-                       <br /><input type="checkbox" name="transaction_types[]" id="fixed"  value="fixed" minchecked="1" data-validation-minchecked-message="You must select at least one stlye of trading.">
-                      In a fixed location<br />(business premises, market stall etc)
-                    </label><br />
-                    <label class="checkbox" for="normadic" style="margin:10px 0 0 0;">
-                     <img src="images/location_icon_on.png" width="50px" style="clear:both; float:left; margin: 0 20px 0 0;"/>
-                       <br /><input type="checkbox" name="transaction_types[]"  id="normadic" value="normadic">
-                      In varying locations<br />(at customers premises) 
-                    </label>
-                    <p class="help-block"></p>
-                  </div>
+                    <br /><input type="checkbox" name="transaction_types[]" id="fixed"  value="fixed" minchecked="1" data-validation-minchecked-message="You must select at least one stlye of trading.">
+                    In a fixed location<br />(business premises, market stall etc)
+                  </label><br />
+                  <label class="checkbox" for="normadic" style="margin:10px 0 0 0;">
+                    <img src="images/location_icon_on.png" width="50px" style="clear:both; float:left; margin: 0 20px 0 0;"/>
+                    <br /><input type="checkbox" name="transaction_types[]"  id="normadic" value="normadic">
+                    In varying locations<br />(at customers premises) 
+                  </label>
+                  <p class="help-block"></p>
                 </div>
-                
-
-               
-                 <!-- Textarea -->
-                <div class="form-group control-group">
-                  <label class="control-label col-lg-2" for="goods_services">What do you do? <br/> <a class="hover_span">why?
-                    <div class="hover_content"><p>Tell your customers what you do. It will make it easier for them to search for you.</p></div></a></label>
-                  <div class="col-lg-10 controls">           
-                  <label  for="goods_services">
-                          Itemise the goods and services you offer
-                    <textarea id="goods_services" name="goods_services" placeholder="Marketing Design, Business Consultation" style="resize:none" class="form-control"></textarea>
-                        <p>separate each item by a comma(,) remember make this as easy to search as possible  </p>
-                    </label>
-                  </div>
-                </div>
-                
-                 <!-- Textarea -->
-                <div class="form-group control-group">
-                  <label class="control-label col-lg-2" for="statement">Statement: <br /><a class="hover_span">why?
-                    <div class="hover_content"><p>You can write anything you would like here. <br />See it as an area to write a personal message. <br />Why should the customers support your business etc..</p></div></a></label>
-                  <div class="col-lg-10">        
-                  <label  for="statement" >
-                       Let your consumers know a little more about you / your business 
-                     
-                    <textarea id="statement" name="statement" style="resize:none"  class="form-control" ></textarea>
-                       
-                    </label>
-                  </div>
-                </div>
-                                
-            </div>
-            
-            <!-- <div class="form-group control-group">
-                  <label class="control-label col-lg-2" for="movie">Favourite Character:<br /><a class="hover_span">why?
-                    <div class="hover_content"><p>Because its funny! why else</p></div></a>
-   </label>
-                  <div class="col-lg-10">        
-                  <label  for="movie" >
-                                          
-                     <select id="movie" name="movie" class="form-control">
-                          <option value="homer_simpson">Homer Simpson</option>
-                          <option value="darth_vader">Darth Vader</option>
-                          <option value="indiana_jones">Indiana Jones</option>
-                          <option value="jack_sparrow">Jack Sparrow</option>
-                          <option value="james_bond">James Bond</option>
-                          <option value="john_mcclane">John McClane</option>
-                          <option value="the_terminator">The Terminator</option>
-                          <option value="forrest_gump">Forrest Gump</option>
-                          <option value="yoda">Yoda</option>
-                          <option value="baby">Baby</option>
-                          <option value="vivian_ward">Vivian Ward</option>
-                          <option value="sarah_connor">Sarah Connor</option>
-                          <option value="princess_leia">Princess Leia</option>
-                          <option value="dorothy_gale">Dorothy Gale</option>
-                          <option value="jessica_rabbit">Jessica Rabbit</option>
-                          <option value="mary_poppins">Mary Poppins</option>
-                          <option value="catherine_tramell">Catherine Tramell</option>
-                          <option value="martin_riggs">Martin Riggs</option>
-                          <option value="buzz_lightyear">Buzz Lightyear</option>
-                          <option value="axel_foley">Axel Foley</option>
-                        	 <option value="et">E.T.</option>
-                          <option value="sheldon_cooper">Sheldon Cooper</option>
-                          <option value="leonard_hofstadter">Leonard Hofstadter</option>
-                          <option value="penny">Penny</option>
-                          <option value="amy_farrah_fowler">Amy Farrah Fowler</option>
-                </select>
-                       
-                    </label>
-                  </div>
-                </div>-->
-          
-             <!-- Multiple Radios -->
-            <div class="form-group control-group">
-              <label class="control-label col-lg-2" for="ethical_pref">Community support preference:<Br /><a class="hover_span">what is it for?
-                    <div class="hover_content"><p>We will ultimately be using this preference to support local initiatives in these sectors.</p></div></a></label>
-                <div>Please chose the one that you are most keen on supporting</div>
-              <div class="col-lg-10">
-                <label class="radio" for="ethical_pref-0">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-0" value="capacity" checked="checked">
-                  Individual capacity building and learning
-                </label>
-                <label class="radio" for="ethical_pref-1">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-1" value="community">
-                   Community support and community building
-                </label>
-                <label class="radio" for="ethical_pref-2">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-2" value="environmental">
-                  Environmental stewardship
-                </label>
-                <label class="radio" for="ethical_pref-3">
-                  <input type="radio" name="ethical_pref_type" id="ethical_pref-3" value="wellbeing">
-                  Economic well-being
-                </label>
-                <p class="help-block"></p>
-                <a href="http://www.smallgreenconsultancy.co.uk/the-four-bottom-lines-overview.html" target="_blank">more info</a>
               </div>
+
+              <!-- Textarea -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="goods_services">What do you do? <br/> <a class="hover_span">why?
+                  <div class="hover_content"><p>Tell your customers what you do. It will make it easier for them to search for you.</p></div></a>
+                </label>
+                <div class="col-lg-10 controls">           
+                  <label  for="goods_services">
+                    Itemise the goods and services you offer
+                    <textarea id="goods_services" name="goods_services" placeholder="Marketing Design, Business Consultation" style="resize:none" class="form-control"></textarea>
+                    <p>separate each item by a comma(,) remember make this as easy to search as possible  </p>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Textarea -->
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="statement">Statement: <br />
+                  <a class="hover_span">
+                    why?
+                    <div class="hover_content">
+                      <p>
+                        You can write anything you would like here. <br />
+                        See it as an area to write a personal message. <br />
+                        Why should the customers support your business etc..
+                      </p>
+                    </div>
+                  </a>
+                </label>
+                <div class="col-lg-10">        
+                  <label  for="statement" >
+                    Let your consumers know a little more about you / your business 
+
+                    <textarea id="statement" name="statement" style="resize:none"  class="form-control" ></textarea>
+
+                  </label>
+                </div>
+              </div>
+
             </div>
-            
-           <div class="form-group control-group">
-                  <label class="control-label col-lg-2" for="terms-and-conditions">Legal</label>
-                  <div class="col-lg-10 controls">
-                      <label for="terms-and-conditions">
-                      	<input type="checkbox"  name="terms-and-conditions" required data-validation-required-message="You must agree to the terms and conditions">
-                        I agree to the <a href="http://www.peartrade.org/terms-and-conditions.html" target="_blank">terms and conditions</a>
-                     </label>
-                    <p class="help-block"></p>
+
+            <!-- Multiple Radios -->
+            <div class="form-group control-group">
+              <label class="control-label col-lg-2" for="ethical_pref">
+                Community support preference:
+                <br />
+                <a class="hover_span">
+                  what is it for?
+                  <div class="hover_content">
+                    <p>
+                      We will ultimately be using this preference to support local initiatives in these sectors.
+                    </p>
                   </div>
+                </a>
+              </label>
+              <div>Please chose the one that you are most keen on supporting</div>
+                <div class="col-lg-10">
+                  <label class="radio" for="ethical_pref-0">
+                    <input type="radio" name="ethical_pref_type" id="ethical_pref-0" value="capacity" checked="checked">
+                    Individual capacity building and learning
+                  </label>
+                  <label class="radio" for="ethical_pref-1">
+                    <input type="radio" name="ethical_pref_type" id="ethical_pref-1" value="community">
+                    Community support and community building
+                  </label>
+                  <label class="radio" for="ethical_pref-2">
+                    <input type="radio" name="ethical_pref_type" id="ethical_pref-2" value="environmental">
+                    Environmental stewardship
+                  </label>
+                  <label class="radio" for="ethical_pref-3">
+                    <input type="radio" name="ethical_pref_type" id="ethical_pref-3" value="wellbeing">
+                    Economic well-being
+                  </label>
+                  <p class="help-block"></p>
+                  <a href="http://www.smallgreenconsultancy.co.uk/the-four-bottom-lines-overview.html" target="_blank">more info</a>
                 </div>
-                <div class="controls controls-row">
-                    <button type="submit" class="btn btn-success  btn-lg btn-block">Register</button>
-                    <div id='register_result' style='margin-top:20px;'></div>
+              </div>
+
+              <div class="form-group control-group">
+                <label class="control-label col-lg-2" for="terms-and-conditions">Legal</label>
+                <div class="col-lg-10 controls">
+                  <label for="terms-and-conditions">
+                    <input type="checkbox"  name="terms-and-conditions" required data-validation-required-message="You must agree to the terms and conditions">
+                    I agree to the <a href="http://www.peartrade.org/terms-and-conditions.html" target="_blank">terms and conditions</a>
+                  </label>
+                  <p class="help-block"></p>
                 </div>
+              </div>
+              <div class="controls controls-row">
+                <button type="submit" class="btn btn-success  btn-lg btn-block">Register</button>
+                <div id='register_result' style='margin-top:20px;'></div>
+              </div>
             </fieldset>
-            </form>
-            <br />
-
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/2ZzlNMUmadM" frameborder="0" allowfullscreen></iframe>
-		</div>
-        
-      	<div class="col-6 col-sm-4 col-lg-4">
-        	<?php require_once('./config/am_i_local.php');?>
-          <?php require_once('./config/needacard_sidebar.php');?>
-           
-            
+          </form>
+          <br />
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2ZzlNMUmadM" frameborder="0" allowfullscreen></iframe>
         </div>
-      </div>
-     
-
-    </div> <!-- /container -->
-  </body>
-</html>
+          <div class="col-6 col-sm-4 col-lg-4">
+            <?php require_once('./config/am_i_local.php');?>
+            <?php require_once('./config/needacard_sidebar.php');?>
+          </div>
+        </div> <!-- /row -->
+      </div> <!-- /container -->
+    </body>
+  </html>
