@@ -35,7 +35,6 @@ if ($row != 1)
     <!-- Bootstrap -->
     <link href="./config/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="./config/style.css" rel="stylesheet">
-     <link href="./config/css/datepicker.css" rel="stylesheet">
      <link href="./config/css/bootstrap-glyphicons.css" rel="stylesheet">  
      <link rel="icon" type="image/png" href="../images/fav.png">
     <!-- JavaScript plugins (requires jQuery) -->
