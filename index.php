@@ -23,11 +23,6 @@ require './config/utils.php';
 		{
 			top.location.href = document.location.href;
 		}
-		
-		$(function(){
-			window.prettyPrint && prettyPrint();
-			var yearOfBirthPicker = $('#dpYears').datepicker().on('changeDate', function(ev) {$('.datepicker').hide();});
-		});
 	</script>
 
     <script>
