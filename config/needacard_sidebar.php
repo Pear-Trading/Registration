@@ -7,7 +7,10 @@
 
   foreach ($data as $item) {
     if ( ! empty( $item['b_contact_number'] ) ) {
-        $contact = $item['b_contact_person']." (".$item['b_contact_number'].")";
+        $contact = $item['b_contact_person']
+                 . " ("
+                 . $item['b_contact_number']
+                 . ")";
     } else {
         $contact = "";
     }
