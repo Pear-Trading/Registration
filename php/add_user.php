@@ -154,7 +154,7 @@ if (isset($_REQUEST['card_id']))
 				$ajax_response = true;
 				//$ajax_message = "Welcome! $account_name, you have successfully been registered. We will shortly send you an email, you will need follow the instructions in order to verify your account with us.";
 
-				$ajax_message = '<a href="' . BASE_URL . 'registration/verify_account.php?id='.$pass_key.'">Verify Account</a>';
+				$ajax_message = '<a href="' . BASE_URL . '/verify_account.php?id='.$pass_key.'">Verify Account</a>';
 			}
 			else
 			{
