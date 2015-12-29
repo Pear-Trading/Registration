@@ -42,8 +42,8 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
 	function sendEmail($uname, $to, $pass_key, $account, $subject, $rfid, $business)
 	{	
 		$headers = "From: hello@barterproject.org <hello@barterproject.org>\r\n";
-    	$headers .= "MIME-Version: 1.0\r\n";
-    	$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 		$headers .= "Reply-To: barter project <hello@barterproject.org>\r\n";
 		$headers .= "Return-Path: barter project <hello@barterproject.org>\r\n";
 		$headers .= "X-Mailer: PHP". phpversion() ."\n";
@@ -56,7 +56,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
 			{
 				$to = 'marklochrie50265@gmail.com, branknowles9@gmail.com';
 				$headers = "MIME-Version: 1.0\r\n";
-    			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 				$inner_message = '<br />Business/Organisation: <strong>'.$business.' ('.$uname.')</strong> with the card number: <strong>'.$rfid.'</strong> has just signed up to the BARTER project
 				<h3>Before the user can access their account you need to verify their credentials and account information</h3>
 				<p>Please click the link below and follow the onscreen instructions to verify the users account.</p>

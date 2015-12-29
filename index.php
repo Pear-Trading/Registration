@@ -67,8 +67,8 @@ require 'config/utils.php';
         height="315"
         src="//www.youtube.com/embed/1uQxQyAZEAk"
         frameborder="0"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen>
+      </iframe>
 
       <div class="row">
 
