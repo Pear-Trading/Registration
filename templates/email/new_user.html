@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pear Trading - Registration</title>
+</head>
+<body>
+  <h1>Welcome {{ username }}</h1>
+  <h3>Thank you for signing up to Pear Trading!</h3>
+  <p>
+    To finish creating your account, we need you to create a password. Please
+    click the link below to create a password.
+  </p>
+  <p>
+    <a href='{{ root_url }}/verify_account.php?id={{ pass_key }}'>Create Account Password</a>
+  </p>
+  <p>
+    If you did not request to create an account with Pear Trading, then please
+    ignore this email.
+  </p>
+  <p>
+    Thanks
+    <br>
+    Michael Hallem
+  </p>
+</body>
+</html>
