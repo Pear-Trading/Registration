@@ -378,8 +378,7 @@ require 'config/utils.php';
                 </label>
                 <div class="col-lg-10">        
                   <label  for="statement" >
-                    Let your consumers know a little more about you / your business 
-
+                    Please add a short business profile here. (optional)
                     <textarea id="statement" name="statement" style="resize:none"  class="form-control" ></textarea>
 
                   </label>
