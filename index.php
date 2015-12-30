@@ -356,9 +356,8 @@ require 'config/utils.php';
                 </label>
                 <div class="col-lg-10 controls">           
                   <label  for="goods_services">
-                    Itemise the goods and services you offer
+                    To help us promote your services please briefly itemise the goods and services you offer. (optional)
                     <textarea id="goods_services" name="goods_services" placeholder="Marketing Design, Business Consultation" style="resize:none" class="form-control"></textarea>
-                    <p>separate each item by a comma(,) remember make this as easy to search as possible  </p>
                   </label>
                 </div>
               </div>
