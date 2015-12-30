@@ -2,6 +2,8 @@
 
 	require_once '../config/con.php';
 	require_once '../config/utils.php';
+
+  $received = true;
 	
 	//connect to the database
 	try {
@@ -165,12 +167,13 @@
 	$dbh = null;
 	
 	$allData = array(
+    'received' => $received,
 		'message' => $message,
-		'details' => $traderData,
-		'traderTotals' => $stats,
+		'details' => (object)$traderData,
+		'traderTotals' => (object)$stats,
 		'customerData' => $consumerData
 	);
-	
+
 	print json_encode($allData);
 
 ?>
