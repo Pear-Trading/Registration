@@ -94,7 +94,7 @@ $( function() {
           var received_data = JSON.parse(data);
 
           document.getElementById('register_result').innerHTML = received_data.message +
-          "<p><a href='<?=BASE_URL?>'>Go back to the home page.</a></p>";
+          "<p><a href='https://app.peartrade.org'>Go back to the home page.</a></p>";
 
           if(received_data.response == true) {
             document.getElementById('register_result').className='alert alert-success';
