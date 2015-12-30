@@ -1,6 +1,6 @@
 <?php
-error_reporting(0);
-ini_set('display_errors', '0');
+#error_reporting(0);
+#ini_set('display_errors', '0');
 //debug statements
 //consumer
 //card_id=12345678&account=consumer&account_name=Mark+Lochrie&username=marklochrie&password1=mypass1&password2=mypass1&email=marklochrie50265%40gmail.com&gender=M&postcode=LA1+4DG&ethical_pref=environmental_impact&goods_services=&statement=&service=false&manufacturer=false&retailer=false&fixed=false&normadic=false&dob=19-08-1986 
@@ -9,9 +9,9 @@ ini_set('display_errors', '0');
 //
 
 //include the database class
-require '../config/con.php';
-require '../config/const.php';
-require '../config/utils.php';
+require 'config/con.php';
+require 'config/const.php';
+require 'config/utils.php';
 
 if (isset($_REQUEST['card_id']))
 {
@@ -149,12 +149,11 @@ if (isset($_REQUEST['card_id']))
 			
 			//execute the query
 			if($statement->execute())
-			{	
-				//sendEmail($account_name, $email, $pass_key, $user_type,'Welcome to BARTER',$card_id, $business_name);
-				$ajax_response = true;
-				//$ajax_message = "Welcome! $account_name, you have successfully been registered. We will shortly send you an email, you will need follow the instructions in order to verify your account with us.";
+			{
+        email_new_user($account_name, $email, $pass_key);
 
-				$ajax_message = '<a href="' . BASE_URL . '/verify_account.php?id='.$pass_key.'">Verify Account</a>';
+				$ajax_response = true;
+				$ajax_message = "Welcome! $account_name, you have successfully been registered. We will shortly send you an email, you will need follow the instructions in order to verify your account with us.";
 			}
 			else
 			{

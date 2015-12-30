@@ -40,7 +40,7 @@ if ($row != 1)
      <link href="./config/css/bootstrap-glyphicons.css" rel="stylesheet">  
      <link rel="icon" type="image/png" href="../images/fav.png">
     <!-- JavaScript plugins (requires jQuery) -->
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
        <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./config/js/bootstrap.min.js"></script>
    

@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
-error_reporting(0);
-ini_set('display_errors', '0');
+#error_reporting(0);
+#ini_set('display_errors', '0');
 define("CURRENCY","&pound;");
 include_once ("con.php");
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
@@ -40,105 +40,47 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
 		return md5($to_salt);
 	}
 
-function sendEmail($uname, $to, $pass_key, $account, $subject, $rfid, $business) {
-  $headers  = "From: hello@barterproject.org <hello@barterproject.org>\r\n";
-  $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-  $headers .= "Reply-To: barter project <hello@barterproject.org>\r\n";
-  $headers .= "Return-Path: barter project <hello@barterproject.org>\r\n";
-  $headers .= "X-Mailer: PHP" . phpversion() . "\n";
-  $headers .= "X-Originating-IP: [" . getenv("REMOTE_ADDR") . "]\r\n";
-  $headers .= "X-Sender-IP: " . $_SERVER["REMOTE_ADDR"] . "\r\n";  
+function email_new_user($username, $email, $pass_key) {
 
-  if ($subject == "Welcome to BARTER") {
-    if ($account != "customer") {
-      $to = 'marklochrie50265@gmail.com, branknowles9@gmail.com';
-      $headers = "MIME-Version: 1.0\r\n";
-      $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-      $inner_message = "
-      <br>
-        Business/Organisation: <strong>$business ($uname)</strong>
-        with the card number: <strong>$rfid</strong>
-        has just signed up to the BARTER project.
-        <h3>Before the user can access their account you need to verify their credentials and account information</h3>
-        <p>Please click the link below and follow the onscreen instructions to verify the users account.</p>
-        <a href='http://barterproject.org/admin/php/confirm.php?id=$rfid&key=$pass_key'>Verify Account</a>";
-    }
-    else
-    {
-      $inner_message = '<h2>Welcome, '.$uname.'</h2>
-        <h3>Thank you for signing up to the BARTER project</h3>
-        <p>Before we can process your account we need to verify you are real!
-        <br />Please click the link below and create a password.</p>
-        <a href="http://barterproject.org/registration/verify_account.php?id='.$pass_key.'">Verify Account</a>';
-    }
+  $template = 'new_user.html';
+  $subject = 'Pear Trading - Registration';
+
+  return send_email($username, $email, $pass_key, $template, $subject);
+
+}
+
+function email_forgotten_password($username, $email, $pass_key) {
+
+  $template = 'forgotten_password.html';
+  $subject = 'Pear Trading - Forgotten Password';
+
+  return send_email($username, $email, $pass_key, $template, $subject);
+
+}
+
+function send_email($username, $email, $pass_key, $template, $subject) {
+
+  // TODO - Differentiate between business and customer like old code?
+
+  $twig_loader = new Twig_Loader_Filesystem('../templates/email');
+  $twig = new Twig_Environment($twig_loader);
+
+  $mail = new PHPMailer;
+
+  $mail->setFrom('hello@app.peartrade.org', 'Hello @ Pear Trading');
+  $mail->addAddress($email, $username);
+  $mail->Subject = $subject;
+  $mail->msgHTML( $twig->render( $template, array(
+    "username" => $username,
+    "root_url" => BASE_URL,
+    "pass_key" => $pass_key
+  )));
+
+  if ($mail->send()) {
+    return true;
+  } else {
+    return false;
   }
-  else if ($subject == "Reset Password")
-  {
-    $inner_message = '
-      <h3>We have reset your account as per request.</h3>
-      <p>Please enter a new password.</p>
-      <a href="http://barterproject.org/registration/verify_account.php?id='.$pass_key.'">Set Password</a>
-      <p>If you did not request to reset your password, please contact us ASAP</p>';
-  }
-
-
-  $message = '<!DOCTYPE html>
-    <html>
-    <head>
-    <title>BARTER - Registration</title>
-    <head>
-    <style>
-    html
-    {
-margin:10;
-padding:10;
-    }
-  @font-face
-  {
-    font-family: BARTERfont;
-src: url("http://www.barterproject.org/fonts/b.ttf"),
-       url("http://www.barterproject.org/fonts/b.woff");
-  }
-  h1,h2,h3,h4,a,p
-  {
-    font-family: BARTERfont;
-  }
-
-#container
-  {
-background:#EEEEEE;
-width:500px;
-padding:10px;
-  }
-
-  </style>
-    </head>
-    <body>
-    <div id="container">
-    <img id="header_img" src="http://barterproject.org/wp-content/uploads/2013/06/final_logo_full.png" alt="BARTER" />';
-
-  $message .= $inner_message;
-
-  $message .= '<br /><br />
-    </div>
-    </body>
-    </html>';
-
-  //$message->setReturnPath('info@barterproject.org');
-
-  if(@mail($to, $subject, $message, $headers, "-f hello@barterproject.org"))
-  {
-    $is_sent = true;
-    return $is_sent;
-    //echo "Mail Sent Successfully";
-  }
-  else{
-    $is_sent = false;
-    return $is_sent;
-    //echo "Mail Not Sent";
-  }
-
 }
 	
 	function curPageURL() 
@@ -475,7 +417,7 @@ padding:10px;
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->bindColumn('b_name', $bname);
         $stmt->bindColumn('b_url', $burl);
-        $stmt->bindColumn('b_type', $btype);
+        //$stmt->bindColumn('b_type', $btype);
         $stmt->bindColumn('b_contact_number', $bnumber);
         $stmt->bindColumn('b_contact_person', $bperson);
         $stmt->fetch(PDO::FETCH_BOUND);

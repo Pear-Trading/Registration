@@ -67,7 +67,6 @@ $url = BASE_URL;
 		
 		
 		if($rows == 1){
-			//sendEmail($account_name, $email, $pass_key, $account);
 			$ajax_response = true;
 			$ajax_message = $success_message;
 		}

@@ -63,7 +63,7 @@ $ajax_response = false;
 		$rows = $statement->rowCount();
 		
 		if($rows == 1){
-			sendEmail($account_name, $email, $new_pass_key, '0', 'Reset Password',$rfid, $business);
+      email_forgotten_password($account_name, $email, $new_pass_key);
 	
 			$ajax_response = true;
 			$ajax_message = "You should received an email with instructions on how to reset your password.";

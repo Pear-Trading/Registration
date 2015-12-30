@@ -18,13 +18,6 @@ button,input:focus,input[type="button"]:focus::-moz-focus-inner, {
 	outline:none;
 }
 
-@font-face
-{
-	font-family: BARTERfont;
-	src: url('fonts/b.ttf'),
-     		url('fonts/b.woff'); /* IE9 */
-}
-
 body
 {
 	height:100%;
