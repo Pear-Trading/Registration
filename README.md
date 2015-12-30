@@ -17,6 +17,22 @@ folder for the app, and the ssh password and username.
 
 ```
 rsync -v -e ssh --exclude '.git' --exclude 'pear.sql' --exclude '*.example' \
-  --exclude 'migrations' -r --delete . username@hostname:/path/to/target
+  --exclude 'composer.*' --exclude '*.swp' --exclude 'migrations' -r \
+  --delete . username@hostname:/path/to/target
 ```
 
+# Install deps to sync
+
+Get composer:
+
+```
+curl -sS https://getcomposer.org/installer | php
+```
+
+then install the deps:
+
+```
+php composer.phar install
+```
+
+Note that composer.phar and the vendor folder are both ignored by git, and must be downloaded before rsync-ing up.
