@@ -15,7 +15,7 @@ require 'config/utils.php';
     <link href="config/style.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
-    <script src="js/jquery.min.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
     <script src="config/js/bootstrap.min.js"></script>
     <script src="config/js/jqBootstrapValidation.js"></script>
     <script src="js/index.js"></script>
