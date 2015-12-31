@@ -62,7 +62,7 @@ function send_email($username, $email, $pass_key, $template, $subject) {
 
   // TODO - Differentiate between business and customer like old code?
 
-  $twig_loader = new Twig_Loader_Filesystem('../templates/email');
+  $twig_loader = new Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'] . '/../templates/email');
   $twig = new Twig_Environment($twig_loader);
 
   $mail = new PHPMailer;
