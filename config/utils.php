@@ -33,12 +33,6 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
 		return $string;
 	}
 	
-	//simple function to salt a given password that returns an md5 hash
-	function salt_password($password){
-		$to_salt = $password."a7y3ttk7go";
-		return md5($to_salt);
-	}
-
 function email_new_user($username, $email, $pass_key) {
 
   $template = 'new_user.html';

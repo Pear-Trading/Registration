@@ -10,14 +10,10 @@
 		$json = json_decode(file_get_contents('php://input'));
 		$user_pass = $json->password; 
 		$user_email = $json->email;
-		$user_pass = salt_password($user_pass); //re-salting the password - safety measures
 		$traderData = array();
 		$stats = array();
 		$consumerData = array();
 	
-		
-		//$user_pass = salt_password(salt_password('g00gle'));
-		//$user_email = 'marklochrie50265@gmail.com';
 		
 		$tid = 0;
 		
@@ -25,22 +21,20 @@
 		$status = 1;
 		
 		//check if the trader is already a registered trader or
-		$stmt = DB::get()->prepare("SELECT * FROM tbl_users WHERE user_email=:email AND user_pass=:password AND user_account_status=:status");
+		$stmt = DB::get()->prepare("SELECT * FROM tbl_users WHERE user_email=:email AND user_account_status=:status");
 		$stmt->bindParam(':email', $user_email, PDO::PARAM_STR);
-		$stmt->bindParam(':password', $user_pass, PDO::PARAM_STR);
 		$stmt->bindParam(':status', $status, PDO::PARAM_INT);
 		$stmt->execute();
 		
 		//set the fetch mode  
 		$stmt->setFetchMode(PDO::FETCH_OBJ);
 		
-		$row = $stmt->rowCount();
+		$row = $stmt->fetch();
 		
-		if($row == 1){
+		if( $row && password_verify($user_pass, $row->user_pass) ) {
 			//we have a correct user login detected
 			$message = true;
 			
-			while($row = $stmt->fetch()){
 				//get all the data e need for sending to the app
 				
 				$tid = $row->user_card_id;
@@ -61,7 +55,6 @@
 					'goodsServices' => $row->goods_services,
 					'statement' => $row->statement
 				);
-			}
 			
 			//do another call to get the current stats of the user
 

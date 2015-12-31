@@ -9,7 +9,6 @@ require 'config/utils.php';
 //get the data
 $user_id = mysql_escape_string($_REQUEST['user_id']);
 $password = mysql_escape_string($_REQUEST['password1']);
-$password = salt_password($password);
 
 //get the value of the key
 //$pass_key = substr($mysql_escape_string($_REQUEST['pass_key']), 40);
@@ -53,9 +52,9 @@ $url = BASE_URL;
 		$action = "verified_account";
 		
 		//get the insert password and save it to the database
-		$password = salt_password($password);
+    $crypted_password = password_hash($password, PASSWORD_BCRYPT);
 		$statement = DB::get()->prepare("UPDATE tbl_users SET user_pass=:p, user_account_status=:ok, last_updated=:updated, last_action=:action WHERE user_id=:id AND pass_key=:pk AND user_pass =:blank");
-		$statement->bindParam(':p', $password, PDO::PARAM_STR);
+		$statement->bindParam(':p', $crypted_password, PDO::PARAM_STR);
 		$statement->bindParam(':id', $user_id, PDO::PARAM_STR);
 		$statement->bindParam(':pk', $pass_key, PDO::PARAM_STR);
 		$statement->bindParam(':ok', $status, PDO::PARAM_INT);
