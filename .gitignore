@@ -4,3 +4,4 @@ config/const.php
 .*.swo*
 vendor
 composer.phar
+.htaccess
