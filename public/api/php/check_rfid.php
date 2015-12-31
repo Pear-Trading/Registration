@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 //include the database class
-require '../config/con.php';
+require 'config/con.php';
 
 //get the consumer_rfid from the databas
 $stmt = DB::get()->prepare("SELECT user_card_id FROM tbl_users WHERE user_card_id=:card_id LIMIT 1");

@@ -1,6 +1,6 @@
 <?php //this script will be called whenever a new consumer is being created on the server
 
-	require_once '../config/con.php';
+	require_once 'config/con.php';
 	
 	$jsonArray = array();
 	$jsonArray = json_decode(file_get_contents('php://input'));

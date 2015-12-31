@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 //include the database class
-require '../config/con.php';
-require '../config/utils.php';
+require 'config/con.php';
+require 'config/utils.php';
 
 //get the data
 $rfid = mysql_escape_string($_REQUEST['card_id']);

@@ -10,21 +10,21 @@ require 'config/utils.php';
     <link rel="icon" type="image/png" href="images/fav.png">
     <title>PEAR Trading - Registration</title>
 
-    <link href="config/css/bootstrap.min.css" rel="stylesheet">
-    <link href="config/css/bootstrap-glyphicons.css" rel="stylesheet">
-    <link href="config/style.css" rel="stylesheet">
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="css/lib/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
     <script src="js/lib/jquery.min.js"></script>
-    <script src="config/js/bootstrap.min.js"></script>
-    <script src="config/js/jqBootstrapValidation.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/jqBootstrapValidation.js"></script>
     <script src="js/index.js"></script>
 
   </head>
   <body>
 
     <div id="header">
-      <?php require_once('./config/header.php');?>
+      <?php require_once('config/header.php');?>
     </div>
 
    <div class="container">
@@ -444,8 +444,8 @@ require 'config/utils.php';
           <iframe width="560" height="315" src="https://www.youtube.com/embed/2ZzlNMUmadM" frameborder="0" allowfullscreen></iframe>
         </div>
           <div class="col-6 col-sm-4 col-lg-4">
-            <?php require_once('./config/am_i_local.php');?>
-            <?php require_once('./config/needacard_sidebar.php');?>
+            <?php require_once('config/am_i_local.php');?>
+            <?php require_once('config/needacard_sidebar.php');?>
           </div>
         </div> <!-- /row -->
       </div> <!-- /container -->

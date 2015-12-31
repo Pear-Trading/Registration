@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 //include the database class
-require '../config/con.php';
-require '../config/utils.php';
+require 'config/con.php';
+require 'config/utils.php';
 
 //get the data
 $user_id = mysql_escape_string($_REQUEST['user_id']);
@@ -31,7 +31,7 @@ $stmt->fetch(PDO::FETCH_BOUND);
 //found the user	
 $ajax_response = false;
 
-require '../config/const.php';
+require 'config/const.php';
 $url = BASE_URL;
 
 	if($row == 1){ 

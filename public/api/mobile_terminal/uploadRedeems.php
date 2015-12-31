@@ -1,6 +1,6 @@
 <?php
 
-	require_once '../config/con.php';
+	require_once 'config/con.php';
 	
 	$jsonArray = array();
 	$jsonArray = json_decode(file_get_contents('php://input'));

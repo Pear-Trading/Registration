@@ -1,7 +1,7 @@
 <?php
 
-	require_once '../config/con.php';
-	require_once '../config/utils.php';
+	require_once 'config/con.php';
+	require_once 'config/utils.php';
 
   $received = true;
 	

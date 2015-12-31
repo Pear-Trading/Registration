@@ -1,6 +1,6 @@
 <?php
 //include the database class
-require './config/con.php';
+require 'config/con.php';
 
 //get the consumer_rfid from the databas
 $stmt = DB::get()->prepare("SELECT user_id, user_name, user_card_id, user_pass FROM tbl_users WHERE pass_key=:id LIMIT 1");
@@ -18,7 +18,7 @@ $stmt->bindColumn('user_card_id', $card_id);
 $stmt->bindColumn('user_pass', $password);
 $stmt->fetch(PDO::FETCH_BOUND);
 
-require './config/const.php';
+require 'config/const.php';
 
 if ($row != 1)
 {
@@ -35,17 +35,17 @@ if ($row != 1)
     <title>Verify Account - PEAR trading</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="./config/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="./config/style.css" rel="stylesheet">
-     <link href="./config/css/bootstrap-glyphicons.css" rel="stylesheet">  
-     <link rel="icon" type="image/png" href="../images/fav.png">
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet">
+     <link href="css/lib/bootstrap-glyphicons.css" rel="stylesheet">  
+     <link rel="icon" type="image/png" href="images/fav.png">
     <!-- JavaScript plugins (requires jQuery) -->
     <script src="js/lib/jquery.min.js"></script>
        <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="./config/js/bootstrap.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
    
  
-    <script src="./config/js/jqBootstrapValidation.js"></script>
+    <script src="js/lib/jqBootstrapValidation.js"></script>
     
 
 
@@ -138,7 +138,7 @@ if ($row != 1)
   <body>
  
   <div id="header">
-    <?php require_once('./config/header.php');?>
+    <?php require_once('config/header.php');?>
     </div>
     <div class="container">
     <?php
