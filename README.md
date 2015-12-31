@@ -13,7 +13,9 @@ To set this up, modify the following config files to contain the required data:
 
 And save them without the `.example` suffix. The next step is to synchronise
 these to the server, which you will need to know the IP or hostname, and target
-folder for the app, and the ssh password and username.
+folder for the app, and the ssh password and username. You will also need to do
+this for the `htaccess.example` folder, modifying the `include_path` options to
+include the root of the application folder.
 
 ```
 rsync -v -e ssh --exclude '.git' --exclude 'pear.sql' --exclude '*.example' \
@@ -35,4 +37,6 @@ then install the deps:
 php composer.phar install
 ```
 
-Note that composer.phar and the vendor folder are both ignored by git, and must be downloaded before rsync-ing up.
+Note that composer.phar and the vendor folder are both ignored by git, and must
+be downloaded before rsync-ing up. The composer.lock file locks all versions of
+current libraries being used, so dont worry about that!
