@@ -7,10 +7,10 @@ require 'config/con.php';
 require 'config/utils.php';
 
 //get the data
-$rfid = mysql_escape_string($_REQUEST['card_id']);
-$email = mysql_escape_string($_REQUEST['email']);
-$user_id = mysql_escape_string($_REQUEST['user_id']);
-$pass_key = mysql_escape_string($_REQUEST['pass_key']);
+$rfid = $_REQUEST['card_id'];
+$email = $_REQUEST['email'];
+$user_id = $_REQUEST['user_id'];
+$pass_key = $_REQUEST['pass_key'];
 
 
 //get the consumer_rfid from the databas

@@ -16,58 +16,45 @@ require 'config/utils.php';
 if (isset($_REQUEST['card_id']))
 {
 	//get the data
-	$card_id = mysql_escape_string($_REQUEST['card_id']);
-	$account = mysql_escape_string($_REQUEST['account']);
-	$account_name = mysql_escape_string($_REQUEST['account_name']);
-	//$username = mysql_escape_string($_POST['username']);
-	//$password1 = mysql_escape_string($_POST['password1']);
+	$card_id = $_REQUEST['card_id'];
+	$account = $_REQUEST['account'];
+	$account_name = $_REQUEST['account_name'];
 	$password1 = "";
-	#$dob = mysql_escape_string($_REQUEST['dob']);
 	
-	#$phpdate = strtotime( $dob );
-    #$dob = date( 'Y-m-d', $phpdate );
-
-
-    $age_group = $_REQUEST['age_group'];
+  $age_group = $_REQUEST['age_group'];
 	
-	$email = mysql_escape_string($_REQUEST['email']);
-	$gender = mysql_escape_string($_REQUEST['gender']);
-	$postcode = mysql_escape_string($_REQUEST['postcode']);
-	//$postcode2 = mysql_escape_string($_POST['postcode1']);
+	$email = $_REQUEST['email'];
+	$gender = $_REQUEST['gender'];
+	$postcode = $_REQUEST['postcode'];
 	
 	//$postcode = $postcode1." ".$postcode2;
 	
 	
 	
 	//taken the movie tag out
-	//$movie = mysql_escape_string($_POST['movie']);
 	$movie ="";
-	$ethical_pref = mysql_escape_string($_REQUEST['ethical_pref_type']);
+	$ethical_pref = $_REQUEST['ethical_pref_type'];
 	
 	
 	if (($account == 'business') || ($account == 'organisation'))
 	{
-		$user_type = $account;
-		$account = 1;
-		$wholesaler = mysql_escape_string($_REQUEST['wholesaler']);
-		$service = mysql_escape_string($_REQUEST['service']);
-		$manufacturer = mysql_escape_string($_REQUEST['manufacturer']);
-		$retailer = mysql_escape_string($_REQUEST['retailer']);
-		$fixed = mysql_escape_string($_REQUEST['fixed']);
-		$normadic = mysql_escape_string($_REQUEST['normadic']);
-		$goods_services = mysql_escape_string($_REQUEST['goods_services']);
-		$trader_statement = mysql_escape_string($_REQUEST['statement']);
-		$business_name = mysql_escape_string($_REQUEST['account_business_name']);
+		$user_type        = $account;
+		$account          = 1;
+		$wholesaler       = $_REQUEST['wholesaler'];
+		$service          = $_REQUEST['service'];
+		$manufacturer     = $_REQUEST['manufacturer'];
+		$retailer         = $_REQUEST['retailer'];
+		$fixed            = $_REQUEST['fixed'];
+		$normadic         = $_REQUEST['normadic'];
+		$goods_services   = $_REQUEST['goods_services'];
+		$trader_statement = $_REQUEST['statement'];
+		$business_name    = $_REQUEST['account_business_name'];
 		
-		$bpostcode = mysql_escape_string($_REQUEST['b_postcode']);
-		//$bpostcode2 = mysql_escape_string($_POST['b_postcode1']);
-		
-		//$bpostcode = $bpostcode1." ".$bpostcode2;
+		$bpostcode = $_REQUEST['b_postcode'];
 		
 		//convert postcode data into lat/lon
 		$latlon = geoencodeaddress($bpostcode);
-		
-		//print_r($latlon);
+
 		$barter_card = "unknown";
 		$emplyment_status = "";
 	}
@@ -87,14 +74,9 @@ if (isset($_REQUEST['card_id']))
 		$business_name = "";
 		$bpostcode = "";
 		$latlon = geoencodeaddress($postcode);
-		$barter_card = mysql_escape_string($_REQUEST['barter_card']);
-		$emplyment_status = mysql_escape_string($_REQUEST['employment_status']);
+		$barter_card = $_REQUEST['barter_card'];
+		$emplyment_status = $_REQUEST['employment_status'];
 	}
-	
-	/*$environmental = mysql_escape_string($_POST['environmental']);
-	$social = mysql_escape_string($_POST['social']);
-	$economic = mysql_escape_string($_POST['economic']);
-	$wellbeing = mysql_escape_string($_POST['wellbeing']);*/
 	
 	//$ethical_pref = $environmental.";".$social.";".$economic.";".$wellbeing;
 	
