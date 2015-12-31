@@ -44,7 +44,6 @@
 					'name' => $row->user_name,
 					'cardId' => $row->user_card_id,
 					'gender' => $row->user_gender,
-					'dob' => $row->user_dob,
 					'postcode' => $row->user_postcode,
 					'preferences' => $row->user_ethical_pref,
 					'isManufacturer' => $row->is_manufacturer,
