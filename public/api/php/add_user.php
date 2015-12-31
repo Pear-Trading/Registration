@@ -107,8 +107,7 @@ if (isset($_REQUEST['card_id']))
 	$stmt->setFetchMode(PDO::FETCH_ASSOC); 
 	$row = $stmt->rowCount();
 	
-	$pass_key_to_send = generate_password();
-	$pass_key = salt_password($pass_key_to_send);
+	$pass_key = generate_random_string();
 	
 	//set the response for the client	
 	$ajax_response = false;

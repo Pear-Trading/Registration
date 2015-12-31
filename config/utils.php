@@ -24,9 +24,8 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
 	}
 }
 
-	//simple function to generate a random string of 8 digits length
-	function generate_password() {
-		$size = '10';
+  function generate_random_string() {
+		$size = '64';
 		$string = '';
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyz';
 		for ($i = 0; $i < $size; $i++)

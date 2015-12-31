@@ -39,8 +39,7 @@ $ajax_response = false;
 	
 		$status = 0;
 		$blank = "";
-		$new_pass_key_to_send = generate_password();
-		$new_pass_key = salt_password($new_pass_key_to_send);
+		$new_pass_key = generate_random_string();
 //used for testing
 //$new_pass_key = $pass_key;
 
