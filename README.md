@@ -25,6 +25,12 @@ rsync -v -e ssh --exclude '.git' --exclude 'pear.sql' --exclude '*.example' \
 
 # Install deps to sync
 
+Get php5:
+
+```
+sudo apt-get install php5-cli
+```
+
 Get composer:
 
 ```
